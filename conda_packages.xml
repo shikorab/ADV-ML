@@ -426,6 +426,8 @@
         <entry key="opencv" value="3.1.0" />
         <entry key="opencv3" value="3.0.0" />
         <entry key="opencv3_gtk" value="3.0.0" />
+        <entry key="opencv3_gtk_numpy_1_12" value="3.0.0" />
+        <entry key="opencv3_numpy_1_12" value="3.0.0" />
         <entry key="opencv_gtk_numpy_1_8" value="2.4.10" />
         <entry key="openjdk" value="8.17.0.3" />
         <entry key="openldap" value="2.4.36" />
@@ -5355,6 +5357,20 @@
             </list>
           </value>
         </entry>
+        <entry key="opencv3_gtk_numpy_1_12">
+          <value>
+            <list>
+              <option value="3.0.0" />
+            </list>
+          </value>
+        </entry>
+        <entry key="opencv3_numpy_1_12">
+          <value>
+            <list>
+              <option value="3.0.0" />
+            </list>
+          </value>
+        </entry>
         <entry key="opencv_gtk_numpy_1_8">
           <value>
             <list>
@@ -8490,6 +8506,6 @@
     <option name="CONDA_CHANNELS">
       <set />
     </option>
-    <option name="LAST_TIME_CHECKED" value="1492888386671" />
+    <option name="LAST_TIME_CHECKED" value="1493059163027" />
   </component>
 </application>
