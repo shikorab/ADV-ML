@@ -5,8 +5,6 @@ Created on Thu Mar 30 14:35:26 2017
 @author: carmonda
 """
 import sys
-
-import scipy
 from scipy import misc
 import numpy as np
 
@@ -17,9 +15,8 @@ ITERATIONS = 100
 
 
 class Vertex(object):
-    def __init__(self, name='', y=None, neighs=None, in_msgs=None, observed=True, index=-1):
+    def __init__(self, name='', y=None, neighs=None, in_msgs=None, observed=True):
         self._name = name
-        self._index = index
         self._y = y  # original pixel
         if (neighs == None): neighs = set()  # set of neighbour nodes
         if (in_msgs == None): in_msgs = {}  # dictionary mapping neighbours to their messages
@@ -39,9 +36,9 @@ class Vertex(object):
         Return the belief according to the last messages
         :return: xi
         """
-        belief = np.zeros((256))
+        belief = np.ones((256))
         for m in self._in_msgs:
-            belief += self._in_msgs[m]
+            belief *= self._in_msgs[m]
 
         return np.argmax(belief)
 
@@ -62,7 +59,7 @@ class Vertex(object):
 
         elif len(self._in_msgs) == 0:
             # Init case
-            m = np.zeros((256))
+            m = np.ones((256))
         else:
             # Iterative case
 
@@ -74,12 +71,12 @@ class Vertex(object):
                     continue
                 m_tag_single_entry += self._in_msgs[neigh_name]
 
-            m_tag = np.add(phi_mat, m_tag_single_entry)
-            m_tag = np.max(m_tag, axis=1)
+            m_tag = np.dot(phi_mat, m_tag_single_entry).flatten()
+
 
             # Normalized - calc m
-            m_tag_sum = scipy.misc.logsumexp(m_tag)
-            m = m_tag - m_tag_sum
+            m_tag_sum = float(np.sum(m_tag))
+            m = m_tag / m_tag_sum
 
         # send msg to neighbour
         neigh.add_in_msg(m, self._name)
@@ -193,7 +190,7 @@ def build_grid_graph(n, m, img_mat):
     # add vertices:
     for i in range(n * m):
         row, col = (i // m, i % m)
-        v = Vertex(name="v" + str(i), y=img_mat[row][col], observed=is_observed(row, col), index=i)
+        v = Vertex(name="v" + str(i), y=img_mat[row][col], observed=is_observed(row, col))
         g.add_vertex(v)
         if (i % m) != 0:  # has left edge
             g.add_edge((v, V[i - 1]))
@@ -223,24 +220,18 @@ def grid2mat(grid, n, m):
 # process grid:
 def grid_process(graph):
     """
-    process the graph - running the algorithm for LBP
+    process the graph - runnnig the algorithm for LBP
     :param graph:
     :return:
     """
     vertices = graph.vertices()
-    vertices = sorted(vertices, key=lambda x: x._index, reverse=True)
+
     for iter in range(ITERATIONS):
         print("iteration {0}".format(iter))
         for v in vertices:
             # ask for msgs
             for neigh in v.get_neighbours():
                 neigh.snd_msg(v)
-
-        # print("iteration {0} - ".format(iter))
-        # for v in vertices:
-        #     # ask for msgs
-        #     for neigh in v.get_neighbours():
-        #         v.snd_msg(neigh)
 
 
 def get_phi_mat():
@@ -262,7 +253,7 @@ if __name__ == '__main__':
     phi_mat = np.zeros((256, 256))
     for xi in range(256):
         for xj in range(256):
-            phi_mat[xi][xj] = -1 * min(abs(xi - xj), VMAX)
+            phi_mat[xi][xj] = np.exp(-1 * min(abs(xi - xj), VMAX))
 
     # Load image:
     img_path = 'penguin-img.png'
