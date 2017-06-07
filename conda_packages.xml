@@ -344,7 +344,7 @@
         <entry key="lockfile" value="0.12.2" />
         <entry key="logilab-common" value="1.0.2" />
         <entry key="luigi" value="2.3.0" />
-        <entry key="lxml" value="3.7.3" />
+        <entry key="lxml" value="3.8.0" />
         <entry key="lz4" value="0.9.4" />
         <entry key="lzo" value="2.06" />
         <entry key="m4" value="1.4.17" />
@@ -441,7 +441,7 @@
         <entry key="orange3" value="3.4.1" />
         <entry key="ordereddict" value="1.1" />
         <entry key="packaging" value="16.8" />
-        <entry key="pandas" value="0.20.1" />
+        <entry key="pandas" value="0.20.2" />
         <entry key="pandas-datareader" value="0.4.0" />
         <entry key="pandasql" value="0.7.3" />
         <entry key="pandoc" value="1.15.0.6" />
@@ -495,7 +495,7 @@
         <entry key="psutil" value="5.2.2" />
         <entry key="psycopg2" value="2.7.1" />
         <entry key="ptyprocess" value="0.5.1" />
-        <entry key="py" value="1.4.33" />
+        <entry key="py" value="1.4.34" />
         <entry key="py-xgboost" value="0.60" />
         <entry key="py2cairo" value="1.10.0" />
         <entry key="pyamg" value="2.2.1" />
@@ -4517,6 +4517,7 @@
               <option value="3.3.4" />
               <option value="3.2.1" />
               <option value="3.6.1" />
+              <option value="3.8.0" />
             </list>
           </value>
         </entry>
@@ -5569,6 +5570,7 @@
               <option value="0.19.0" />
               <option value="0.15.0" />
               <option value="0.20.1" />
+              <option value="0.20.2" />
             </list>
           </value>
         </entry>
@@ -6142,6 +6144,7 @@
               <option value="1.4.26" />
               <option value="1.4.12" />
               <option value="1.4.31" />
+              <option value="1.4.34" />
             </list>
           </value>
         </entry>
@@ -8623,6 +8626,6 @@
     <option name="CONDA_CHANNELS">
       <set />
     </option>
-    <option name="LAST_TIME_CHECKED" value="1496647465478" />
+    <option name="LAST_TIME_CHECKED" value="1496773169747" />
   </component>
 </application>
