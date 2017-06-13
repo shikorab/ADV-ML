@@ -53,7 +53,7 @@
         <entry key="bison" value="3.0.4" />
         <entry key="bitarray" value="0.8.1" />
         <entry key="bitey" value="0.0" />
-        <entry key="bkcharts" value="0.1" />
+        <entry key="bkcharts" value="0.2" />
         <entry key="blaze" value="0.10.1" />
         <entry key="blaze-core" value="0.9.0" />
         <entry key="bleach" value="1.5.0" />
@@ -138,7 +138,7 @@
         <entry key="cymem" value="1.31.2" />
         <entry key="cython" value="0.25.2" />
         <entry key="cytoolz" value="0.8.2" />
-        <entry key="dask" value="0.14.3" />
+        <entry key="dask" value="0.15.0" />
         <entry key="datashader" value="0.4.0" />
         <entry key="datashape" value="0.5.4" />
         <entry key="dateutil" value="2.4.1" />
@@ -151,7 +151,7 @@
         <entry key="dill" value="0.2.6" />
         <entry key="disco" value="0.4.4" />
         <entry key="distribute" value="0.6.45" />
-        <entry key="distributed" value="1.16.3" />
+        <entry key="distributed" value="1.17.0" />
         <entry key="django" value="1.10.5" />
         <entry key="django-nonrel" value="1.6.0" />
         <entry key="django-norel" value="1.5" />
@@ -211,7 +211,7 @@
         <entry key="gdal" value="2.1.0" />
         <entry key="gdata" value="2.0.18" />
         <entry key="gdbm" value="1.12" />
-        <entry key="gensim" value="1.0.1" />
+        <entry key="gensim" value="2.1.0" />
         <entry key="genson" value="0.2.1" />
         <entry key="geos" value="3.5.0" />
         <entry key="geotiff" value="1.4.1" />
@@ -669,6 +669,7 @@
         <entry key="terminado" value="0.6" />
         <entry key="testpath" value="0.3.1" />
         <entry key="text-unidecode" value="1.0" />
+        <entry key="the-silver-searcher" value="2.0.0" />
         <entry key="theano" value="0.9.0" />
         <entry key="thinc" value="5.0.8" />
         <entry key="thrift" value="0.9.3" />
@@ -1348,6 +1349,7 @@
           <value>
             <list>
               <option value="0.1" />
+              <option value="0.2" />
             </list>
           </value>
         </entry>
@@ -2539,6 +2541,7 @@
               <option value="0.12.0" />
               <option value="0.7.6" />
               <option value="0.14.3" />
+              <option value="0.15.0" />
             </list>
           </value>
         </entry>
@@ -2689,6 +2692,7 @@
               <option value="1.16.1" />
               <option value="1.15.0" />
               <option value="1.16.3" />
+              <option value="1.17.0" />
             </list>
           </value>
         </entry>
@@ -3242,6 +3246,7 @@
               <option value="0.12.4" />
               <option value="0.10.2" />
               <option value="0.12.1" />
+              <option value="2.1.0" />
             </list>
           </value>
         </entry>
@@ -7994,6 +7999,13 @@
             </list>
           </value>
         </entry>
+        <entry key="the-silver-searcher">
+          <value>
+            <list>
+              <option value="2.0.0" />
+            </list>
+          </value>
+        </entry>
         <entry key="theano">
           <value>
             <list>
@@ -8714,6 +8726,6 @@
     <option name="CONDA_CHANNELS">
       <set />
     </option>
-    <option name="LAST_TIME_CHECKED" value="1497268765594" />
+    <option name="LAST_TIME_CHECKED" value="1497372802277" />
   </component>
 </application>
